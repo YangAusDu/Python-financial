@@ -1,4 +1,5 @@
-from math import exp as e
+import math
+
 
 class StockOption(object):
     def __init__(self, s0, K, rf=0.05, T=1,
@@ -8,7 +9,7 @@ class StockOption(object):
         self.k = K          # strike price of the option
         self.rf = rf        # risk free interest rate
         self.T = T          # time to maturity
-        self.N = max(1, N)   # number of time steps
+        self.N = max(1,N)   # number of time steps
         self.pu = pu        # probability that s0 will go up
         self.pd = pd        # probability that s0 will go down
         self.div = div      # dividend yield
@@ -20,13 +21,7 @@ class StockOption(object):
         self.Sts = []       # stock price tree
 
     def dt(self):
-        # Time to maturity divided by the number of time step
-        # It returns how long one time step is in years
-        return self.T/float(self.N)
-
-    def df(self):
-        # return the discount factor e^(-rt)
-        return e(-(self.r - self.div)*self.dt)
+        return
 
 
 
