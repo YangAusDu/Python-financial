@@ -29,6 +29,12 @@ class StockOption(object):
         # e^(-rt)
         return e(-(self.rf - self.div) * self.dt())
 
+    
+
+s = StockOption()
+print(s.rf)
+s1 = StockOption(rf = 0.08)
+print(s1.rf)
 
 
 

@@ -22,6 +22,7 @@ class BinomialEuropeanOption(StockOption):
         self.Sts = np.zeros(self.M)
         for i in range(self.M):
             self.Sts[i] = self.s0 * (self.up ** (self.N - i)) * self.down**i
+        print(self.Sts)
 
     def init_payoffs_tree(self):
         # Determine whether it is an call option or put option
@@ -53,9 +54,9 @@ class BinomialEuropeanOption(StockOption):
         return payoffs[0]
 
 
-# Usage:
-# eu = BinomialEuropeanOption(50, 52, pu=0.2, pd=0.2, rf=0.05, T=2, N=3, is_put=True)
-# print("The price of this option is :", eu.price())
+#Usage:
+eu = BinomialEuropeanOption(50, 52, pu=0.2, pd=0.2, rf=0.05, T=2, N=3, is_put=True)
+print("The price of this option is :", eu.price())
 
 
 
